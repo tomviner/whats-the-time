@@ -6,4 +6,4 @@ from hatchling.metadata.plugin.interface import MetadataHookInterface
 
 class CustomMetadataHook(MetadataHookInterface):
     def update(self, metadata: dict[str, object]) -> None:
-        metadata["description"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
+        metadata["description"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
