@@ -1,7 +1,7 @@
 # whats-the-time
 
 ```sh
-uvx 'whats-the-time==1.0.0'
+uvx --no-cache --refresh whats-the-time==1.0.0
 ```
 
 It tells you the time.
