@@ -25,6 +25,8 @@ That `20260409002810` part is not part of the package version. The version is st
 
 It only distinguishes multiple wheels for the same name, version, and compatibility tags, which means the same release can be uploaded again and again as new wheel files.
 
+Hat tip to my friend [@graingert](https://github.com/graingert), who told me about build tags.
+
 ## PyPI Is Not Atomic
 
 PyPI publishes files, not whole releases atomically.
