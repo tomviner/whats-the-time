@@ -1,0 +1,23 @@
+[project]
+name = "whats-the-time"
+version = "1.0.0"
+dynamic = ["description"]
+readme = "README.md"
+authors = [
+    { name = "Tom V", email = "tom@viner.tv" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+whats-the-time = "whats_the_time:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/whats_the_time"]
+
+[tool.hatch.build.hooks.custom]
+[tool.hatch.metadata.hooks.custom]
+
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
