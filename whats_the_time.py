@@ -27,6 +27,6 @@ def main() -> None:
     else:
         wheel_name = f"{name}-{version}-{tag}.whl"
 
+    print(summary)
     print(wheel_name)
     print(f"Version: {version} (never to change)")
-    print(f"Build time: {summary}")
