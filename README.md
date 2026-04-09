@@ -31,4 +31,4 @@ Hat tip to my friend [@graingert](https://github.com/graingert), who told me abo
 
 PyPI publishes files, not whole releases atomically.
 
-This project leans on that. A new wheel can appear for `whats-the-time==1.0.0` while older wheels for the same version already exist, and installers may see different files depending on timing, caching, and selection behavior.
+This project leans on that. A release at a fixed version is not necessarily immutable: new wheels can appear for `whats-the-time==1.0.0` while older wheels for the same version still exist.
