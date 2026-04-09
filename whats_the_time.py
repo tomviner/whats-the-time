@@ -28,4 +28,5 @@ def main() -> None:
         wheel_name = f"{name}-{version}-{tag}.whl"
 
     print(wheel_name)
+    print(f"Version: {version}")
     print(f"Build time: {summary}")
