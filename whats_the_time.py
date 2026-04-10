@@ -10,7 +10,8 @@ def main() -> None:
     version = dist.metadata["Version"]
 
     print(the_time, end="\n\n")
-    print(f"Version: {version} (never to change)")
+    print(f"Version: {version} (appears immutable)")
 
     resolution_time = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     print(f"Reproduce: uvx --exclude-newer {resolution_time} whats-the-time=={version}")
+    print("That one is actually immutable.")
