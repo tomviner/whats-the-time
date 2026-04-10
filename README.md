@@ -35,3 +35,13 @@ Hat tip to my friend [@graingert](https://github.com/graingert), who told me abo
 PyPI publishes files, not whole releases atomically.
 
 This project leans on that. A release at a fixed version is not necessarily immutable: new wheels can appear for `whats-the-time==1.0.0` while older wheels for the same version still exist.
+
+## Reproducible Resolution
+
+If you want a crowd-auditable, frozen answer, pin time as well as version:
+
+```sh
+uvx --exclude-newer 2026-04-09T23:45:59Z whats-the-time==1.0.0
+```
+
+That asks `uv` to resolve as though nothing newer than that instant exists.

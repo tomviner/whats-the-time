@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from importlib.metadata import distribution
 
 
@@ -27,6 +28,13 @@ def main() -> None:
     else:
         wheel_name = f"{name}-{version}-{tag}.whl"
 
+    resolution_time = None
+    if build_tag:
+        build_time = datetime.strptime(build_tag, "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
+        resolution_time = build_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+
     print(summary)
     print(wheel_name)
     print(f"Version: {version} (never to change)")
+    if resolution_time:
+        print(f"Reproduce: uvx --exclude-newer {resolution_time} whats-the-time=={version}")
