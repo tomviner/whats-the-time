@@ -2,6 +2,11 @@
 
 same version, different time
 
+A packaging stunt about mutability.
+
+`whats-the-time==1.0.0` is supposed to look fixed.
+It isn't.
+
 
 ```sh
 uvx --no-cache --refresh whats-the-time==1.0.0
@@ -26,7 +31,7 @@ whats_the_time-1.0.0-20260409002810-py3-none-any.whl
 
 That `20260409002810` part is not part of the package version. The version is still `1.0.0`.
 
-It only distinguishes multiple wheels for the same name, version, and compatibility tags, which means the same release can be uploaded again and again as new wheel files.
+It distinguishes multiple wheels for the same name, version, and compatibility tags, which means the same release can be uploaded again and again as new wheel files.
 
 Hat tip to my friend [@graingert](https://github.com/graingert), who told me about build tags.
 
@@ -38,10 +43,10 @@ This project leans on that. A release at a fixed version is not necessarily immu
 
 ## Reproducible Resolution
 
-If you want a crowd-auditable, frozen answer, pin time as well as version:
+If you want a crowd-auditable, frozen answer, you need to pin time as well as version:
 
 ```sh
-uvx --exclude-newer 2026-04-09T23:45:59Z whats-the-time==1.0.0
+uvx --exclude-newer now whats-the-time==1.0.0
 ```
 
-That asks `uv` to resolve as though nothing newer than that instant exists.
+That asks `uv` to resolve as though nothing newer than right now exists.
