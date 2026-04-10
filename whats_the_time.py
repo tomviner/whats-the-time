@@ -14,4 +14,4 @@ def main() -> None:
 
     resolution_time = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     print(f"Reproduce: uvx --exclude-newer {resolution_time} whats-the-time=={version}")
-    print("That one is actually immutable.")
+    print("                                                                         (actually immutable)")
