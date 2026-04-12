@@ -12,15 +12,18 @@ It isn't.
 uvx --no-cache --refresh whats-the-time==1.0.0
 ```
 
-It tells you the time, using a pinned package version.
+It tells you the time, using endless wheels.
 
 ## What's the point?
 
 Recent supply chain attacks have made it clear any library could get compromised at any time.
+Right now, community screening and review of packages are one practical defence.
+
+When you run `uvx mypackage`, you're fetching a fresh package, potentially not audited yet.
+
 Exact version alone is not enough.
 
-`uvx mypackage` will fetch a fresh package, potentially not audited yet.
-Even `uvx mypackage==1.2.3` can fetch a fresh wheel, potentially not audited yet.
+`uvx mypackage==1.2.3` can fetch a fresh wheel, potentially not audited yet.
 Only `uvx --exclude-newer 2026-04-10T22:20:39Z mypackage==1.2.3` restricts resolution to what existed at that moment.
 
 ## What are build tags?
@@ -52,6 +55,8 @@ uvx --exclude-newer 2026-04-10T22:20:39Z whats-the-time==1.0.0
 ```
 
 That asks `uv` to [resolve as though nothing newer exists](https://docs.astral.sh/uv/concepts/resolution/#reproducible-resolutions). For a shell-generated cutoff, use `$(date -u +%FT%TZ)`.
+
+Even then, wheels can still be deleted from a release. This only fixes resolution against the files that existed then.
 
 ## Local Build
 
