@@ -13,5 +13,5 @@ def main() -> None:
     print(f"Version: {version} (appears immutable)")
 
     resolution_time = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    print(f"Reproduce: uvx --exclude-newer {resolution_time} whats-the-time=={version}")
-    print("                                                                         (actually immutable)")
+    print(f"Time limit: uvx --exclude-newer {resolution_time} whats-the-time=={version}")
+    print("Could be any surviving 1.0.0 wheel uploaded before then.")
