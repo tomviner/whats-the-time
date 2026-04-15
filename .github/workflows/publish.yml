@@ -1,9 +1,12 @@
 name: Publish
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "*/5 * * * *"
+  # Permenantly disabled, due to PyPI suspending my account. Sorry PyPI.
+  #
+  # workflow_dispatch:
+  # schedule:
+  #   - cron: "*/5 * * * *"
+  {}
 
 jobs:
   publish:
